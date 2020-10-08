@@ -7,7 +7,7 @@ from django.contrib.auth.models import BaseUserManager
 class UserProfileManager(BaseUserManager):
     """ Manager for user profiles"""
 
-    def creat_user(self, email, name, password = None):
+    def create_user(self, email, name, password = None):
         """ Creat a user profile """
         if not email:
             raise ValueError('User must have an email address')
@@ -22,7 +22,7 @@ class UserProfileManager(BaseUserManager):
 
     def create_superuser(self, email, name, password):
         """ Create and save a new superuser with given details """
-        user = self.creat_user(email ,name, password)
+        user = self.create_user(email ,name, password)
 
         user.is_superuser = True
         user.is_staff = True
